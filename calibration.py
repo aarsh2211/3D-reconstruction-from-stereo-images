@@ -34,5 +34,6 @@ if ret == True:
  ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1],None,None)
  cv2.imshow('img',images)
  cv2.waitKey(0)
+np.savez_compressed('b.npz', ret = ret, mtx = mtx, dist=dist, rvecs=rvecs, tvecs=tvecs)
 
 cv2.destroyAllWindows()
